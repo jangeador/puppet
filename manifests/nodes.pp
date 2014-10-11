@@ -3,6 +3,7 @@ node default {
 	include ssh
 	include postgres
 	include git
+	include django
 
 	file { '/usr/local/app':
 	    ensure => directory,
@@ -15,4 +16,7 @@ node default {
 	    path => '/usr/local/app',
 	    dir => 'django',
 	}
+
+	
+
 }

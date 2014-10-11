@@ -11,7 +11,7 @@ node default {
 	    mode => 755,
 	}
 
-	git::clone { 'jangeador/django-sample':
+	git::clone_url { 'git://github.com/jangeador/django_sample.git':
 	    path => '/usr/local/app',
 	    dir => 'django',
 	}

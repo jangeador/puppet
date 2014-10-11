@@ -16,3 +16,12 @@ define git::clone ( $path, $dir){
         require => [Class["git"], File[$path]],
     }
 }
+
+define git::clone_url ( $path, $dir){
+    exec { "clone-$url-$path":
+    	user => "delio",
+        command => "/usr/bin/git clone $name $path/$dir",
+        creates => "$path/$dir",
+        require => [Class["git"], File[$path]],
+    }
+}
